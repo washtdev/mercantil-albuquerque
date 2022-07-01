@@ -1,0 +1,151 @@
+.header-spacing {
+    height: 100vh;
+}
+
+.header {
+    background: var(--gradient) no-repeat, var(--banner);
+    background-size: 100%, var(--background-size);
+    background-position: 0 0, var(--background-position);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-blend-mode: var(--header-blend-mode);
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(0.3125rem);
+    z-index: -2;
+}
+
+.banner {
+    width: 100%;
+    height: calc(100vh - var(--menu-height) - var(--page-scroll));
+    display: grid;
+    place-items: center;
+    padding: 0 var(--gap);
+}
+
+.banner-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: calc(var(--gap) * 2);
+    max-width: 75rem;
+    padding-bottom: var(--menu-height);
+    position: absolute;
+    top: calc(0 - var(--page-scroll) / 2);
+    overflow: visible;
+    z-index: -1;
+    padding-left: var(--gap);
+    padding-right: var(--gap);
+}
+
+.banner h1 {
+    font-size: 4rem;
+    font-family: 'Montserrat';
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: var(--gap);
+    font-weight: 800;
+}
+
+.banner h2 {
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    color: var(--white-color);
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+}
+
+.logo {
+    content: var(--logo-stroked);
+    max-width: 300pt;
+    transform: translateX(calc((var(--logo-position) - 10.9rem) * (1 - max(var(--banner-opacity), 0)))) scale(calc(max(min(var(--banner-opacity), 1), var(--logo-scale))));
+}
+
+.slogan {
+    opacity: var(--banner-opacity);
+}
+
+main div {
+    padding: calc(2rem + var(--menu-height)) 4rem 4rem 4rem;
+    line-height: 2rem;
+    font-family: 'Roboto';
+    min-height: 100vh;
+}
+
+@media (max-width: 1200px) {
+    /*:root {
+        scroll-snap-type: y mandatory;
+    }
+    
+    .header-spacing, main {
+        scroll-snap-align: start;
+    }*/
+
+    .menu nav {
+        display: none;
+    }
+
+    .menu-button {
+        padding: 1rem;
+    }
+
+    .menu-button div {
+        width: 2rem;
+        height: 0.3rem;
+        margin-bottom: 0.4rem;
+        background: var(--white-color);
+    }
+
+    .menu-button div:last-child {
+        margin-bottom: 0;
+    }
+
+    .banner h1 {
+        font-size: 3rem;
+    }
+
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        place-items: center;
+        opacity: var(--banner-opacity);
+    }
+    
+    .logo {
+        transform: none;
+        max-width: 250pt;
+    }
+}
+
+@media (max-width: 900px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner h2 {
+        font-size: 1rem;
+    }
+
+    .banner img {
+        max-width: 15rem;
+    }
+
+    .banner-container {
+        gap: calc(var(--gap) * 7);
+    }
+}
+
+/*transform: translate(calc(min(1 - var(--banner-opacity), 1) * var(--logo-translate-x) * (1 - max(var(--banner-opacity), var(--logo-scale-y)))), calc(min(1 - var(--banner-opacity), 1) * var(--logo-translate-y) * (max(var(--banner-opacity), var(--logo-scale-y))))) scale(max(var(--banner-opacity), var(--logo-scale-y)));*/
+
+/*translateY(calc((var(--slogan-position) - 30rem) * (1 - max(var(--banner-opacity), 0))))*/

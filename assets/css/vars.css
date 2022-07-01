@@ -1,0 +1,20 @@
+:root {
+    /* Preconfigured CSS Variables */
+    --primary-color: #E81C27;
+    --secondary-color: #3A3973;
+    --white-color: #FFFFFF;
+    --gradient: linear-gradient(135deg, #E81C27, #3A3973 50%);
+    --logo: url(../img/logo.svg);
+    --logo-stroked: url(../img/logo-stroked.svg);
+    --banner: url(../img/banner.jpg);
+    --page-gradient: linear-gradient(135deg, #F5F0F0, #F5F0F5);
+    --page-gradient-reversed: linear-gradient(-135deg, #F5F0F0, #F5F0F5);
+    --gap: 1.5rem;
+
+    /* CSS variables configured through Javascript */
+    --menu-height: 0px;
+    --page-scroll: 0;
+    --background-position: 0 0;
+    --background-size: 0 0;
+    --header-blend-mode: hard-light;
+}
