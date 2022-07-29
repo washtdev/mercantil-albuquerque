@@ -271,8 +271,9 @@ button{
     max-width: 62.5rem;
 }
 
-.rectangle2 {
+.rectangle2 a {
     color: var(--white-color);
+}
 
 .promocoes{
     top: 50%;
